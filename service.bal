@@ -1,11 +1,10 @@
 import ballerina/http;
 
-configurable string url = ?;
 
 service / on new http:Listener(9090) {
 
     resource function post invoke(@http:Payload xml payload) returns xml|error {
-        http:Client httpEp = check new (url = "url", config = {
+        http:Client httpEp = check new (url = "https://www.dataaccess.com/webservicesserver/NumberConversion.wso", config = {
         httpVersion: "1.1"
     });
 
